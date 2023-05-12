@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhj1jxy0jheig"]
+[gd_scene load_steps=5 format=3 uid="uid://dhj1jxy0jheig"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_baaaq"]
+[ext_resource type="Texture2D" uid="uid://cyolsddo6acvn" path="res://Assets/Tile_set_temp_32.png" id="2_fkjx4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ne3a6"]
+texture = ExtResource("2_fkjx4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_7bdae"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ne3a6")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_baaaq")
@@ -11,5 +28,7 @@ script = ExtResource("1_baaaq")
 zoom = Vector2(0.1, 0.1)
 
 [node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
+tile_set = SubResource("TileSet_7bdae")
 cell_quadrant_size = 32
 format = 2
