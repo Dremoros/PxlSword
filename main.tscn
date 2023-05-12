@@ -9,3 +9,7 @@ script = ExtResource("1_baaaq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.1, 0.1)
+
+[node name="TileMap" type="TileMap" parent="."]
+cell_quadrant_size = 32
+format = 2
